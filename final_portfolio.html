@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Srajan Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #101010;
+            color: #f0f0f0;
+            overflow-x: hidden;
+        }
+
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1e1e1e, #292929);
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 4rem;
+            margin: 0;
+            color: #00d9ff;
+        }
+
+        header p {
+            font-size: 1.5rem;
+            margin: 10px 0;
+            color: #b3b3b3;
+        }
+
+        nav {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            background: #151515;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #f0f0f0;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #00d9ff;
+        }
+
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        .about {
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #00d9ff;
+        }
+
+        .about p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #b3b3b3;
+        }
+
+        .about i {
+            padding: 10px;
+        }
+
+        .skills,.projects {
+            margin-top: 50px;
+        }
+
+        .skills h2,
+        .projects h2 {
+            font-size: 2.5rem;
+            color: #00d9ff;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .skills ul {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            list-style: none;
+            padding: 0;
+        }
+
+        .skills ul li {
+            background: #1e1e1e;
+            color: #f0f0f0;
+            margin: 10px;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .skills i {
+            padding: 8px;
+        }
+
+        .skills ul li:hover {
+            transform: scale(1.1);
+        }
+
+        .projects .project-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .projects .project {
+            background: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            text-align: center;
+            width: 350px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .projects .project:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .projects .project h3 {
+            margin-bottom: 10px;
+            color: #00d9ff;
+        }
+
+        .projects .project p {
+            color: #b3b3b3;
+        }
+
+        .resume {
+            text-align: center;
+            margin-top: 50px;
+            padding: 50px 20px;
+            background: #1e1e1e;
+            color: #f0f0f0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .resume h2 {
+            font-size: 2.5rem;
+            color: #00d9ff;
+            margin-bottom: 20px;
+        }
+
+        .resume p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #b3b3b3;
+        }
+
+        .resume .btn {
+            display: inline-block;
+            background: #00d9ff;
+            color: #101010;
+            padding: 10px 20px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .resume .btn:hover {
+            background: #00b7d6;
+        }
+
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #00d9ff;
+            text-align: center;
+        }
+
+        .contact i {
+            padding: 8px;
+        }
+
+        footer {
+            background: #151515;
+            color: #b3b3b3;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        footer a {
+            color: #00d9ff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 3rem;
+            }
+
+            .skills ul li {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+            .projects .project {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>SRAJAN.../></h1>
+        <p>Empowering the digital world with innovative design and development.</p>
+    </header>
+
+    <nav>
+        <a href="#about"><i class="fas fa-user"></i> About</a>
+        <a href="#skills"><i class="fas fa-code"></i> Skills</a>
+        <a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a>
+        <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+    </nav>
+
+    <section id="about" class="about">
+        <h2><i class="fas fa-info-circle"></i>About Me</h2>
+        <p>
+            Hello! I am Srajan a passionate and dedicated final year Engineering Student, web developer with a keen eye
+            for design and a strong technical background. I specialize in creating responsive, user-friendly websites
+            and applications that provide seamless digital experiences. My expertise lies in modern web technologies
+            like HTML, CSS, JavaScript, and frameworks like React.js.</p>
+        <p>
+            With a commitment to continuous learning, I thrive on solving complex problems and turning creative ideas
+            into reality. Collaboration and innovation are at the core of my work ethic, and I enjoy contributing to
+            projects that make a meaningful impact.
+        </p>
+    </section>
+
+    <section id="skills" class="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li><i class="fab fa-html5"></i>HTML</li>
+            <li><i class="fab fa-css3-alt"></i>CSS</li>
+            <li><i class="fab fa-js-square"></i>JavaScript</li>
+            <li><i class="fab fa-react"></i>React.js</li>
+            <li><i class="fab fa-git-alt"></i>Git & GitHub</li>
+        </ul>
+    </section>
+
+    <section id="projects" class="projects">
+        <h2>Projects</h2>
+        <div class="project-list">
+            <div class="project">
+                <h3>Project 1</h3>
+                <p>An innovative web application for task management.</p>
+            </div>
+            <div class="project">
+                <h3>Project 2</h3>
+                <p>A dynamic portfolio showcasing design excellence.</p>
+            </div>
+            <div class="project">
+                <h3>Project 3</h3>
+                <p>A responsive e-commerce website for seamless shopping.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="resume" class="resume">
+        <h2><i class="fas fa-file-alt"></i> Resume</h2>
+        <p>Download my resume to learn more about my skills, experience, and projects.</p>
+        <a href="./pictures/Devv02.pdf" class="btn" download>
+            <i class="fas fa-download"></i> Download Resume
+        </a>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact</h2>
+        <footer>
+            <p>&copy; 2024 My Portfolio</p>
+            <p>
+                <a href="https://www.linkedin.com/in/srajan-verma1309/" target="_blank"><i
+                        class="fab fa-linkedin"></i>LinkedIn</a> |
+                <a href="https://github.com/SRAJANNN/" target="_blank"><i class="fab fa-github"></i>GitHub</a> |
+                <a href="mailto:srajanv2003@gmail.com"><i class="fas fa-envelope"></i>Email</a> |
+                <a href="https://www.instagram.com/srajan_verma/" target="_blank"><i class="fab fa-instagram"></i>
+                    Instagram</a>
+            </p>
+        </footer>
+    </section>
+</body>
+
+</html>
